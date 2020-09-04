@@ -40,9 +40,9 @@ class PasteController extends Controller
     public function store(Request $request)
     {
         $post = new post();
-        $post->name = $request->name;
-        $post->slug = $request->name;
+        $post->nameP = $request->nameP;
         $post->author_id = rand(1,10);
+        $post->code = $request->code;
         $post->href = Str::random(8);
         $post->save();
         return redirect()->route('paste.index');

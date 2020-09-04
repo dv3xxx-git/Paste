@@ -10,8 +10,9 @@ $factory->define(post::class, function (Faker $faker) {
         $date = $faker->dateTimeBetween('-1 month','-1 day');
         $url = Str::random('8');
     return [
-        'name'=>$faker->realText('10','4'),
-        'slug'=>$faker->slug('3','4'),
+        'nameP'=>$faker->realText('10','4'),
+
+        'code' =>$faker->realText('150','4'),
         'author_id'=>rand(1,10),
         'href'=> $url,
         'created_at'=> $date,

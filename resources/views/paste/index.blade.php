@@ -1,18 +1,22 @@
+@extends('layouts.app')
+@section('content')
 <a href="{{ route('paste.create') }}">Создать пост</a>
 <div>
 @foreach($posts as $post)
     <ul>
         <li>
-            <a href="{{ route('paste.show',$post) }}">{{ $post->name }}</a>
+            <a href="{{ route('paste.show',$post) }}">{{ $post->nameP }}</a>
             {{ $post->updated_at }}
         </li>
     </ul>
 @endforeach
 </div>
-<h1>Замутим постик</h1>
+<h1>Создать</h1>
 <form action="{{ route('paste.store') }}"  method="post">
     @csrf
-    <textarea name="paste"></textarea>
-    <input name="name" type="text">
+
+    <input name="nameP" type="text"><br>
+    <textarea name="code" placeholder="Введите код"></textarea>
     <input type="submit" value="создать пост">
 </form>
+@endsection
